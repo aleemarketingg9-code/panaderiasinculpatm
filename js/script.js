@@ -77,9 +77,8 @@ function renderPrice() {
     ? `<span class="price-regular">${CONFIG.REGULAR_PRICE}</span> ${CONFIG.PRICE}`
     : CONFIG.PRICE;
 
-  document.querySelectorAll("#priceDisplay, #priceDisplay2").forEach((el) => {
-    el.innerHTML = priceHtml;
-  });
+  const priceDisplay = document.getElementById("priceDisplay");
+  if (priceDisplay) priceDisplay.innerHTML = priceHtml;
   const stickyPrice = document.getElementById("stickyPriceDisplay");
   if (stickyPrice) stickyPrice.textContent = CONFIG.PRICE;
 }
