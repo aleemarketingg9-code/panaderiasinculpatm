@@ -4,7 +4,7 @@
    ====================================================================== */
 const CONFIG = {
   // Medición (reutilizados de la página actual en vivo — ya miden igual)
-  CLARITY_ID: "wn4dy34791",
+  CLARITY_ID: "z6r5mlnddf",
   META_PIXEL_ID: "4039427159523335",
 
   // Checkout real de Whop.
