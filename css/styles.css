@@ -511,6 +511,92 @@ a { color: inherit; }
   color: var(--color-primary);
   margin: 4px 0 20px;
 }
+.addon-offers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  text-align: left;
+}
+.addon-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--color-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.addon-card:has(.addon-checkbox:checked) {
+  border-color: var(--color-primary);
+  background: var(--color-sand);
+}
+.addon-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.addon-check {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border-radius: 6px;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  position: relative;
+}
+.addon-checkbox:checked ~ .addon-check {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.addon-checkbox:checked ~ .addon-check::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.addon-checkbox:focus-visible ~ .addon-check {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.addon-card-body { flex: 1 1 auto; min-width: 0; }
+.addon-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 12px;
+  margin-bottom: 4px;
+}
+.addon-card-title { font-family: var(--font-display); font-weight: 700; font-size: 0.98rem; }
+.addon-card-price { display: flex; align-items: baseline; gap: 6px; white-space: nowrap; }
+.addon-price-strike { font-size: 0.82rem; color: var(--color-ink-faint); text-decoration: line-through; }
+.addon-price-final { font-weight: 800; color: var(--color-primary); }
+.addon-badge {
+  background: #1f7a3f;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+.addon-card-desc { font-size: 0.85rem; color: var(--color-ink-soft); }
+.addon-total {
+  text-align: center;
+  font-weight: 600;
+  margin: 4px 0 0;
+}
+.addon-total strong { color: var(--color-primary); font-family: var(--font-display); }
+
 .whop-embed-container {
   margin-top: 24px;
   background: var(--color-card);

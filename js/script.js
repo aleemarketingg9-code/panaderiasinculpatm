@@ -7,8 +7,15 @@ const CONFIG = {
   CLARITY_ID: "z6r5mlnddf",
   META_PIXEL_ID: "4039427159523335",
 
-  // Checkout real de Whop.
+  // Checkout real de Whop. Cambia según qué adicionales (order bumps)
+  // estén marcados arriba del checkout.
   WHOP_PLAN_ID: "plan_GTR0eMPQQz1WM",
+  WHOP_PLAN_VARIANTS: {
+    none: "plan_GTR0eMPQQz1WM",
+    addon1: "plan_9BKyukF8bdF54",
+    addon2: "plan_PxmrmPHV84oYs",
+    both: "plan_pW7NT7xJkHbWv",
+  },
 
   // Enlace directo de respaldo (se usa solo si WHOP_PLAN_ID queda vacío).
   WHOP_FALLBACK_URL: "https://whop.com/checkout/plan_GTR0eMPQQz1WM",
@@ -84,6 +91,80 @@ function renderPrice() {
 }
 
 /* ====================== Checkout (Whop) ====================== */
+let whopScriptLoaded = false;
+let whopScriptLoading = false;
+
+function loadWhopScript(onReady) {
+  if (whopScriptLoaded) { onReady(); return; }
+  if (whopScriptLoading) {
+    // ya se está cargando: espera a que termine
+    const check = setInterval(() => {
+      if (whopScriptLoaded) { clearInterval(check); onReady(); }
+    }, 50);
+    return;
+  }
+  whopScriptLoading = true;
+  const script = document.createElement("script");
+  script.src = "https://cdn.whop.com/elements/amber/elements.js";
+  script.setAttribute("data-whop-elements", "");
+  script.onload = () => {
+    whopScriptLoaded = true;
+    onReady();
+  };
+  document.head.appendChild(script);
+}
+
+function mountWhopCheckout(planId) {
+  const container = document.getElementById("whopEmbedContainer");
+  container.innerHTML = "";
+  const mountPoint = document.createElement("div");
+  mountPoint.id = "whop-checkout";
+  container.appendChild(mountPoint);
+
+  loadWhopScript(() => {
+    const checkout = window.WhopElements().checkout.create({ plan: planId });
+    checkout.create("checkout").mount("#whop-checkout");
+  });
+}
+
+function getSelectedPlan() {
+  const addon1 = document.getElementById("addon1")?.checked;
+  const addon2 = document.getElementById("addon2")?.checked;
+  const variants = CONFIG.WHOP_PLAN_VARIANTS;
+  if (addon1 && addon2) return variants.both;
+  if (addon1) return variants.addon1;
+  if (addon2) return variants.addon2;
+  return variants.none;
+}
+
+function updateAddonTotal() {
+  const checkboxes = document.querySelectorAll(".addon-checkbox");
+  let total = 0;
+  checkboxes.forEach((cb) => {
+    if (cb.checked) total += parseFloat(cb.dataset.price || "0");
+  });
+  const totalEl = document.getElementById("addonTotal");
+  const totalValueEl = document.getElementById("addonTotalValue");
+  if (!totalEl || !totalValueEl) return;
+  if (total > 0) {
+    totalValueEl.textContent = "$" + total.toFixed(2) + " USD";
+    totalEl.hidden = false;
+  } else {
+    totalEl.hidden = true;
+  }
+}
+
+function setupAddonOffers() {
+  const checkboxes = document.querySelectorAll(".addon-checkbox");
+  if (!checkboxes.length) return;
+  checkboxes.forEach((cb) => {
+    cb.addEventListener("change", () => {
+      updateAddonTotal();
+      mountWhopCheckout(getSelectedPlan());
+    });
+  });
+}
+
 function setupCheckout() {
   const container = document.getElementById("whopEmbedContainer");
   const mainLink = document.getElementById("mainCheckoutLink");
@@ -92,18 +173,8 @@ function setupCheckout() {
     // Embed oficial de Whop (snippet "JavaScript" generado desde el panel de
     // Whop para este plan): queda en la página, sin salir ni abrir pestañas,
     // lo que funciona bien también dentro del navegador interno de Instagram.
-    const mountPoint = document.createElement("div");
-    mountPoint.id = "whop-checkout";
-    container.appendChild(mountPoint);
-
-    const script = document.createElement("script");
-    script.src = "https://cdn.whop.com/elements/amber/elements.js";
-    script.setAttribute("data-whop-elements", "");
-    script.onload = () => {
-      const checkout = window.WhopElements().checkout.create({ plan: CONFIG.WHOP_PLAN_ID });
-      checkout.create("checkout").mount("#whop-checkout");
-    };
-    document.head.appendChild(script);
+    mountWhopCheckout(getSelectedPlan());
+    setupAddonOffers();
 
     if (mainLink) mainLink.style.display = "none";
   } else if (CONFIG.WHOP_FALLBACK_URL) {
