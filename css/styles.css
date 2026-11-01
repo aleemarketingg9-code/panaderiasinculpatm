@@ -229,7 +229,19 @@ a { color: inherit; }
   font-size: 0.88rem;
   color: var(--color-ink-soft);
 }
-.trust-strip--center { align-items: center; margin-bottom: 18px; }
+.trust-strip--center {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 6px;
+  margin-bottom: 18px;
+  font-size: 0.78rem;
+}
+@media (min-width: 420px) {
+  .trust-strip--center { font-size: 0.88rem; column-gap: 16px; }
+}
 
 /* ============ Barra fija móvil ============ */
 .sticky-bar {
