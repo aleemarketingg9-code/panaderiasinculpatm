@@ -90,18 +90,21 @@ function setupCheckout() {
   const mainLink = document.getElementById("mainCheckoutLink");
 
   if (CONFIG.WHOP_PLAN_ID) {
-    // Embed oficial de Whop: queda en la página, sin salir ni abrir pestañas,
+    // Embed oficial de Whop (snippet "JavaScript" generado desde el panel de
+    // Whop para este plan): queda en la página, sin salir ni abrir pestañas,
     // lo que funciona bien también dentro del navegador interno de Instagram.
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://js.whop.com/static/checkout/loader.js";
-    document.head.appendChild(script);
+    const mountPoint = document.createElement("div");
+    mountPoint.id = "whop-checkout";
+    container.appendChild(mountPoint);
 
-    const embed = document.createElement("div");
-    embed.className = "whop-checkout-embed";
-    embed.setAttribute("data-whop-checkout-plan-id", CONFIG.WHOP_PLAN_ID);
-    embed.setAttribute("data-whop-checkout-theme", "light");
-    container.appendChild(embed);
+    const script = document.createElement("script");
+    script.src = "https://cdn.whop.com/elements/amber/elements.js";
+    script.setAttribute("data-whop-elements", "");
+    script.onload = () => {
+      const checkout = window.WhopElements().checkout.create({ plan: CONFIG.WHOP_PLAN_ID });
+      checkout.create("checkout").mount("#whop-checkout");
+    };
+    document.head.appendChild(script);
 
     if (mainLink) mainLink.style.display = "none";
   } else if (CONFIG.WHOP_FALLBACK_URL) {
