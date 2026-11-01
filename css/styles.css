@@ -132,15 +132,21 @@ a { color: inherit; }
 
 /* ============ Hero ============ */
 .hero { padding: 28px 0 36px; }
-.hero-grid { display: grid; gap: 24px; }
-.hero-media { display: flex; justify-content: center; }
+.hero-grid {
+  display: grid;
+  grid-template-areas: "top" "media" "bottom";
+  gap: 24px;
+}
+.hero-text-top { grid-area: top; }
+.hero-media { grid-area: media; display: flex; justify-content: center; }
+.hero-text-bottom { grid-area: bottom; }
 .hero-cover {
   width: 220px;
   max-width: 60vw;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
 }
-.hero-content { text-align: center; }
+.hero-text-top, .hero-text-bottom { text-align: center; }
 
 .eyebrow {
   font-size: 0.78rem;
@@ -550,8 +556,13 @@ a { color: inherit; }
 
 /* ============ Responsive ============ */
 @media (min-width: 700px) {
-  .hero-grid { grid-template-columns: 0.9fr 1.1fr; align-items: center; text-align: left; }
-  .hero-content { text-align: left; }
+  .hero-grid {
+    grid-template-areas: "media top" "media bottom";
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    text-align: left;
+  }
+  .hero-text-top, .hero-text-bottom { text-align: left; }
   .hero-sub, .hero-line { margin-left: 0; margin-right: 0; }
   .tag-row { justify-content: flex-start; }
   .price-row { justify-content: flex-start; }
@@ -572,14 +583,12 @@ a { color: inherit; }
   main { padding-bottom: 76px; } /* espacio para la barra fija */
 
   /* El titular va primero y llena la pantalla (como la referencia de Emma);
-     la portada, el precio y el botón quedan debajo, un scroll más abajo. */
+     la portada queda entre el subtítulo y el precio. */
   .hero { padding: 22px 0 18px; }
   .hero-grid { gap: 18px; }
-  .hero-content { order: -1; }
-  .hero-media { order: 2; }
   .hero-cover { width: 170px; max-width: 46vw; }
   .eyebrow { font-size: 0.74rem; margin-bottom: 10px; }
-  .hero-content h1 { font-size: 2.05rem; line-height: 1.14; margin-bottom: 0.4em; }
+  .hero-text-top h1 { font-size: 2.05rem; line-height: 1.14; margin-bottom: 0.4em; }
   .hero-sub { font-size: 1rem; margin-bottom: 0.5em; }
   .hero-line { display: none; }
   .tag-row { display: none; }
