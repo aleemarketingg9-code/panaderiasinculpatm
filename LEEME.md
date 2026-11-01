@@ -19,7 +19,7 @@ Mismo objeto `CONFIG`:
 REGULAR_PRICE: null,  // ej: "$47 USD"
 OFFER_END_ISO: null,  // ej: "2026-12-15T23:59:59-05:00" (fecha real)
 ```
-Mientras estén en `null`, se muestra solo "$22 USD" sin tachado ni urgencia falsa. Si me das el precio regular y la fecha real, lo activo.
+Mientras estén en `null`, se muestra solo "$21.99 USD" sin tachado ni urgencia falsa. Si me das el precio regular y la fecha real, lo activo.
 
 ### c) Correo de soporte y legales
 ```js
