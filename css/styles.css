@@ -134,7 +134,7 @@ a { color: inherit; }
 .hero { padding: 28px 0 36px; }
 .hero-grid {
   display: grid;
-  grid-template-areas: "top" "media" "bottom";
+  grid-template-areas: "media" "top" "bottom";
   gap: 24px;
 }
 .hero-text-top { grid-area: top; }
@@ -689,14 +689,14 @@ a { color: inherit; }
 @media (max-width: 699px) {
   main { padding-bottom: 76px; } /* espacio para la barra fija */
 
-  /* El titular va primero y llena la pantalla (como la referencia de Emma);
-     la portada queda entre el subtítulo y el precio. */
-  .hero { padding: 22px 0 18px; }
-  .hero-grid { gap: 18px; }
-  .hero-cover { width: 170px; max-width: 46vw; }
-  .eyebrow { font-size: 0.74rem; margin-bottom: 10px; }
-  .hero-text-top h1 { font-size: 2.05rem; line-height: 1.14; margin-bottom: 0.4em; }
-  .hero-sub { font-size: 1rem; margin-bottom: 0.5em; }
+  /* La portada va primero y es protagonista (como la referencia de Emma);
+     el titular es más chico y queda debajo, con el precio y el botón. */
+  .hero { padding: 18px 0 18px; }
+  .hero-grid { gap: 14px; }
+  .hero-cover { width: 240px; max-width: 68vw; }
+  .eyebrow { font-size: 0.72rem; margin-bottom: 8px; }
+  .hero-text-top h1 { font-size: 1.55rem; line-height: 1.18; margin-bottom: 0.35em; }
+  .hero-sub { font-size: 0.92rem; margin-bottom: 0.4em; }
   .hero-line { display: none; }
   .tag-row { display: none; }
   .price-row { margin: 0 0 10px; }
