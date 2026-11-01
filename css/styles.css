@@ -460,10 +460,15 @@ a { color: inherit; }
 .guarantee-wrap p { margin: 0; }
 
 /* ============ Comprar ============ */
-.section-buy { background: var(--color-sand-deep); }
+.section-buy { background: var(--color-card); }
 .buy-wrap { text-align: center; max-width: 560px; }
 .price-row--center { justify-content: center; }
-.whop-embed-container { margin-top: 24px; }
+.whop-embed-container {
+  margin-top: 24px;
+  background: var(--color-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
 .whop-embed-placeholder {
   background: var(--color-card);
   border: 1px dashed var(--color-border);
