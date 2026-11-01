@@ -8,10 +8,10 @@ const CONFIG = {
   META_PIXEL_ID: "4039427159523335",
 
   // Checkout real de Whop.
-  WHOP_PLAN_ID: "plan_kgDX8MRmOp1oy",
+  WHOP_PLAN_ID: "plan_GTR0eMPQQz1WM",
 
   // Enlace directo de respaldo (se usa solo si WHOP_PLAN_ID queda vacío).
-  WHOP_FALLBACK_URL: "https://whop.com/checkout/plan_kgDX8MRmOp1oy",
+  WHOP_FALLBACK_URL: "https://whop.com/checkout/plan_GTR0eMPQQz1WM",
 
   // Precio. Si no hay precio regular confirmado todavía, deja REGULAR_PRICE
   // en null: se muestra solo "$22 USD" sin tachado ni cuenta regresiva.
