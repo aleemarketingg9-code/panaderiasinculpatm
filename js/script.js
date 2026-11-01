@@ -140,8 +140,17 @@ function getSelectedPlan() {
 function updateAddonTotal() {
   const checkboxes = document.querySelectorAll(".addon-checkbox");
   let total = 0;
-  checkboxes.forEach((cb) => {
-    if (cb.checked) total += parseFloat(cb.dataset.price || "0");
+  checkboxes.forEach((cb, i) => {
+    const confirmEl = document.getElementById("addonConfirm" + (i + 1));
+    if (cb.checked) {
+      total += parseFloat(cb.dataset.price || "0");
+      if (confirmEl) {
+        confirmEl.querySelector("span").textContent = cb.dataset.name || "";
+        confirmEl.hidden = false;
+      }
+    } else if (confirmEl) {
+      confirmEl.hidden = true;
+    }
   });
   const totalEl = document.getElementById("addonTotal");
   const totalValueEl = document.getElementById("addonTotalValue");
