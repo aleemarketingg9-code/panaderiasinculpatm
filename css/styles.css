@@ -571,19 +571,22 @@ a { color: inherit; }
 @media (max-width: 699px) {
   main { padding-bottom: 76px; } /* espacio para la barra fija */
 
-  /* Compactar el hero para que precio y botón se vean sin hacer scroll */
-  .hero { padding: 14px 0 18px; }
-  .hero-grid { gap: 10px; }
-  .hero-cover { width: 132px; max-width: 38vw; }
-  .eyebrow { font-size: 0.68rem; margin-bottom: 4px; }
-  .hero-content h1 { font-size: 1.45rem; line-height: 1.16; margin-bottom: 0.3em; }
-  .hero-sub { font-size: 0.86rem; margin-bottom: 0.5em; }
+  /* El titular va primero y llena la pantalla (como la referencia de Emma);
+     la portada, el precio y el botón quedan debajo, un scroll más abajo. */
+  .hero { padding: 22px 0 18px; }
+  .hero-grid { gap: 18px; }
+  .hero-content { order: -1; }
+  .hero-media { order: 2; }
+  .hero-cover { width: 170px; max-width: 46vw; }
+  .eyebrow { font-size: 0.74rem; margin-bottom: 10px; }
+  .hero-content h1 { font-size: 2.05rem; line-height: 1.14; margin-bottom: 0.4em; }
+  .hero-sub { font-size: 1rem; margin-bottom: 0.5em; }
   .hero-line { display: none; }
   .tag-row { display: none; }
   .price-row { margin: 0 0 10px; }
-  .price { font-size: 1.55rem; }
-  .price-note { font-size: 0.78rem; padding: 3px 8px; }
-  .hero .btn-primary { min-height: 44px; font-size: 0.92rem; }
-  .micro-note { font-size: 0.76rem; margin-top: 8px; }
-  .hero .trust-strip { margin-top: 10px; gap: 4px; font-size: 0.76rem; }
+  .price { font-size: 1.7rem; }
+  .price-note { font-size: 0.8rem; padding: 3px 8px; }
+  .hero .btn-primary { min-height: 46px; font-size: 0.95rem; }
+  .micro-note { font-size: 0.8rem; margin-top: 8px; }
+  .hero .trust-strip { margin-top: 10px; gap: 4px; font-size: 0.78rem; }
 }
