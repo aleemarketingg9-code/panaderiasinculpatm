@@ -74,7 +74,7 @@ Confirmar que ya está completo y entregable en Whop antes de publicar la págin
 
 1. ~~Plan id (o link) real de Whop.~~ ✅ hecho.
 2. Precio regular + fecha, si lo vas a tachar.
-3. Correo de soporte.
+3. ~~Correo de soporte.~~ ✅ hecho (reallbienestarr@gmail.com).
 4. Links de Términos y Privacidad.
 5. Desglose de las +180 recetas y 3–6 nombres reales.
 6. Confirmar si el +35 de la portada del Bono 1 es correcto.

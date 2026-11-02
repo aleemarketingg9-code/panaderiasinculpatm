@@ -28,7 +28,7 @@ const CONFIG = {
 
   // Contacto y legales — si quedan vacíos, esos enlaces no se muestran
   // (mejor ocultarlos que mostrar un enlace roto).
-  SUPPORT_EMAIL: "",
+  SUPPORT_EMAIL: "reallbienestarr@gmail.com",
   TERMS_URL: "",
   PRIVACY_URL: "",
 };
