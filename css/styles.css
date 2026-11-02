@@ -802,28 +802,30 @@ a { color: inherit; }
   background: var(--color-ink);
   color: var(--color-bg);
   border-radius: var(--radius-md);
-  padding: 12px 20px;
-  max-width: 320px;
+  padding: 16px 24px;
+  max-width: 360px;
   margin: 0 auto 20px;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 0 5px rgba(209, 97, 27, 0.16);
 }
-.countdown-label { font-size: 0.72rem; color: rgba(255, 251, 243, 0.7); flex: 1 1 auto; text-align: left; }
+.countdown-label { font-size: 0.82rem; font-weight: 600; color: rgba(255, 251, 243, 0.85); flex: 1 1 auto; text-align: left; }
 .countdown-time { display: flex; gap: 8px; }
 .countdown-box {
   background: var(--color-primary);
   color: #fff;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   border-radius: 8px;
-  padding: 4px 10px;
-  min-width: 42px;
+  padding: 6px 14px;
+  min-width: 52px;
   text-align: center;
 }
-.countdown-sep { font-weight: 800; align-self: center; }
+.countdown-sep { font-weight: 800; align-self: center; font-size: 1.2rem; }
 .countdown-ended .countdown-label::before { content: "Esta oferta de esta visita ya terminó — "; }
 
 .offer-decline { margin-top: 14px; }
-.offer-decline a { color: var(--color-ink-faint); text-decoration: underline; font-size: 0.85rem; }
+.offer-decline a { color: var(--color-ink-soft); text-decoration: underline; font-size: 0.92rem; font-weight: 600; }
 
 .offer-problem { padding: 48px 0; }
 .module-list { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }

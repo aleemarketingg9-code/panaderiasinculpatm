@@ -45,16 +45,9 @@
           <p class="price-block-sub">50% de descuento · Solo en esta pantalla, solo ahora</p>
         </div>
 
-        <div class="countdown" id="downsellCountdownWrap">
-          <span class="countdown-label">Este precio de $9.99 desaparece en:</span>
-          <span class="countdown-time">
-            <span class="countdown-box" id="downsellMin">10</span>
-            <span class="countdown-sep">:</span>
-            <span class="countdown-box" id="downsellSec">00</span>
-          </span>
-        </div>
-
         <a href="#comprar-downsell" class="btn btn-primary btn-large btn-bounce js-cta" data-cta="downsell-hero">👍 Sí, quiero el Método Textura Perfecta™ por solo $9.99</a>
+
+        <p class="offer-decline"><a href="gracias.html">No gracias, continuar sin el método</a></p>
       </div>
     </div>
   </section>
@@ -225,22 +218,14 @@
     metaPixelId: "4039427159523335",
     checkoutContainerId: "downsellCheckout",
     whopPlanId: "plan_4rhixJXQjfsDe",
+    // El cronómetro solo va al final, junto al checkout — no arriba en el hero.
     countdown: {
-      key: "downsell",
-      minutes: 10,
-      minutesId: "downsellMin",
-      secondsId: "downsellSec",
-      wrapId: "downsellCountdownWrap",
-    },
-  });
-  document.addEventListener("DOMContentLoaded", () => {
-    setupCountdown({
       key: "downsell",
       minutes: 10,
       minutesId: "downsellMin2",
       secondsId: "downsellSec2",
       wrapId: "downsellCountdownWrap2",
-    });
+    },
   });
 </script>
 </body>
