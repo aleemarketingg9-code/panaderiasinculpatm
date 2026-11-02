@@ -21,8 +21,8 @@ const CONFIG = {
   WHOP_FALLBACK_URL: "https://whop.com/checkout/plan_GTR0eMPQQz1WM",
 
   // Precio. Si no hay precio regular confirmado todavía, deja REGULAR_PRICE
-  // en null: se muestra solo "$21.99 USD" sin tachado ni cuenta regresiva.
-  PRICE: "$21.99 USD",
+  // en null: se muestra solo "$12.99 USD" sin tachado ni cuenta regresiva.
+  PRICE: "$12.99 USD",
   REGULAR_PRICE: null, // ej: "$47 USD"
   OFFER_END_ISO: null, // ej: "2026-12-15T23:59:59-05:00" (fecha real, no se reinicia)
 
