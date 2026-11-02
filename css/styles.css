@@ -724,6 +724,20 @@ a { color: inherit; }
 /* ============ Upsell / Downsell: componentes compartidos ============ */
 .offer-hero { padding: 32px 0 40px; text-align: center; }
 .offer-wrap { max-width: 640px; margin: 0 auto; }
+.offer-cover {
+  width: 220px;
+  max-width: 58vw;
+  margin: 0 auto 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+.offer-group-img {
+  width: 100%;
+  max-width: 560px;
+  margin: 28px auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
 
 .confirm-badge, .warn-badge {
   display: inline-flex;
