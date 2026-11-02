@@ -720,3 +720,112 @@ a { color: inherit; }
   .micro-note { font-size: 0.8rem; margin-top: 8px; }
   .hero .trust-strip { margin-top: 10px; gap: 4px; font-size: 0.78rem; }
 }
+
+/* ============ Upsell / Downsell: componentes compartidos ============ */
+.offer-hero { padding: 32px 0 40px; text-align: center; }
+.offer-wrap { max-width: 640px; margin: 0 auto; }
+
+.confirm-badge, .warn-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.confirm-badge { background: #e4f3e9; color: #1f7a3f; }
+.warn-badge { background: var(--color-sand); color: var(--color-primary); }
+
+.offer-sub { font-size: 1.05rem; max-width: 50ch; margin: 0 auto 24px; }
+
+.offer-highlight { color: var(--color-primary); font-family: var(--font-display); }
+
+.price-block {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  max-width: 420px;
+  margin: 0 auto 16px;
+}
+.price-block-note { font-size: 0.78rem; color: rgba(255, 251, 243, 0.65); margin-bottom: 4px; }
+.price-block-regular { font-size: 1.1rem; text-decoration: line-through; color: rgba(255, 251, 243, 0.55); margin-right: 8px; }
+.price-block-final { font-family: var(--font-display); font-weight: 800; font-size: 2.3rem; color: #fff; }
+.price-block-final sup { font-size: 1.1rem; }
+.price-block-sub { font-size: 0.82rem; color: rgba(255, 251, 243, 0.7); margin-top: 6px; }
+
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  max-width: 320px;
+  margin: 0 auto 20px;
+}
+.countdown-label { font-size: 0.72rem; color: rgba(255, 251, 243, 0.7); flex: 1 1 auto; text-align: left; }
+.countdown-time { display: flex; gap: 8px; }
+.countdown-box {
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  padding: 4px 10px;
+  min-width: 42px;
+  text-align: center;
+}
+.countdown-sep { font-weight: 800; align-self: center; }
+.countdown-ended .countdown-label::before { content: "Esta oferta de esta visita ya terminó — "; }
+
+.offer-decline { margin-top: 14px; }
+.offer-decline a { color: var(--color-ink-faint); text-decoration: underline; font-size: 0.85rem; }
+
+.offer-problem { padding: 48px 0; }
+.module-list { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.module-item { border-top: 1px solid var(--color-border); padding-top: 16px; }
+.module-item:first-child { border-top: none; padding-top: 0; }
+.module-num { font-family: var(--font-display); color: var(--color-primary); font-weight: 700; font-size: 0.85rem; }
+.module-item h3 { margin: 2px 0 6px; }
+.module-item p { margin-bottom: 8px; }
+.module-item ul { margin: 0; padding-left: 20px; color: var(--color-ink-soft); font-size: 0.9rem; }
+.module-item li { margin-bottom: 4px; }
+
+.offer-reframe {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: 44px 0;
+  text-align: center;
+}
+.offer-reframe h2 { color: var(--color-bg); }
+.offer-reframe p { color: rgba(255, 251, 243, 0.8); max-width: 56ch; margin: 0 auto 20px; }
+.consequence-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 320px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.consequence-list li { color: #f2a6a6; font-weight: 600; }
+.offer-reframe-quote { font-style: italic; color: rgba(255, 251, 243, 0.65); margin-top: 20px; }
+
+.results-box {
+  background: var(--color-sand);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  max-width: 480px;
+  margin: 24px auto 0;
+  text-align: left;
+}
+.results-box p:first-child { font-weight: 700; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 10px; }
+.results-box ul { list-style: none; padding: 0; margin: 0; }
+.results-box li { margin-bottom: 6px; }
