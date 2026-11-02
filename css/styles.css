@@ -731,6 +731,18 @@ a { color: inherit; }
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
 }
+.offer-photo {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  display: block;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.offer-photo-figure { max-width: 560px; margin: 32px auto; text-align: center; }
+.offer-photo-figure figcaption { font-style: italic; color: var(--color-ink-faint); font-size: 0.88rem; margin-top: 10px; }
 .offer-group-img {
   width: 100%;
   max-width: 560px;
