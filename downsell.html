@@ -26,30 +26,36 @@
 <main id="main">
 
   <!-- Hero del downsell -->
-  <section class="offer-hero">
-    <div class="wrap offer-wrap">
-      <p class="warn-badge">⚠ Espera — este descuento no vuelve a aparecer</p>
-      <h1>Sabemos que preferiste no llevarlo.<br><span class="offer-highlight">Pero esto no lo vamos a repetir.</span></h1>
-      <p class="offer-sub">El <span class="offer-highlight">Método Textura Perfecta™</span> sigue aquí — ahora a mitad de precio. Una sola vez. Cuando salgas de esta pantalla, esta oferta desaparece.</p>
-
-      <img src="images/textura-portada.webp" alt="Portada del Método Textura Perfecta™" width="700" height="700" class="offer-cover" fetchpriority="high">
-
-      <div class="price-block">
-        <p class="price-block-note">Última oportunidad — precio que no se repite en ningún otro lugar</p>
-        <p><span class="price-block-regular">$19.99 USD</span><span class="price-block-final">$9.99 USD</span></p>
-        <p class="price-block-sub">50% de descuento · Solo en esta pantalla, solo ahora</p>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text-top offer-text">
+        <p class="warn-badge">⚠ Espera — este descuento no vuelve a aparecer</p>
+        <h1>Sabemos que preferiste no llevarlo.<br><span class="offer-highlight">Pero esto no lo vamos a repetir.</span></h1>
+        <p class="offer-sub">El <span class="offer-highlight">Método Textura Perfecta™</span> sigue aquí — ahora a mitad de precio. Una sola vez. Cuando salgas de esta pantalla, esta oferta desaparece.</p>
       </div>
 
-      <div class="countdown" id="downsellCountdownWrap">
-        <span class="countdown-label">Este precio de $9.99 desaparece en:</span>
-        <span class="countdown-time">
-          <span class="countdown-box" id="downsellMin">10</span>
-          <span class="countdown-sep">:</span>
-          <span class="countdown-box" id="downsellSec">00</span>
-        </span>
+      <div class="hero-media">
+        <img src="images/textura-portada.webp" alt="Portada del Método Textura Perfecta™" width="700" height="700" class="hero-cover" fetchpriority="high">
       </div>
 
-      <a href="#comprar-downsell" class="btn btn-primary btn-large js-cta" data-cta="downsell-hero">👍 Sí, quiero el Método Textura Perfecta™ por solo $9.99</a>
+      <div class="hero-text-bottom offer-text">
+        <div class="price-block">
+          <p class="price-block-note">Última oportunidad — precio que no se repite en ningún otro lugar</p>
+          <p><span class="price-block-regular">$19.99 USD</span><span class="price-block-final">$9.99 USD</span></p>
+          <p class="price-block-sub">50% de descuento · Solo en esta pantalla, solo ahora</p>
+        </div>
+
+        <div class="countdown" id="downsellCountdownWrap">
+          <span class="countdown-label">Este precio de $9.99 desaparece en:</span>
+          <span class="countdown-time">
+            <span class="countdown-box" id="downsellMin">10</span>
+            <span class="countdown-sep">:</span>
+            <span class="countdown-box" id="downsellSec">00</span>
+          </span>
+        </div>
+
+        <a href="#comprar-downsell" class="btn btn-primary btn-large btn-bounce js-cta" data-cta="downsell-hero">👍 Sí, quiero el Método Textura Perfecta™ por solo $9.99</a>
+      </div>
     </div>
   </section>
 

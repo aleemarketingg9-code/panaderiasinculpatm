@@ -724,6 +724,18 @@ a { color: inherit; }
 /* ============ Upsell / Downsell: componentes compartidos ============ */
 .offer-hero { padding: 32px 0 40px; text-align: center; }
 .offer-wrap { max-width: 640px; margin: 0 auto; }
+.offer-text .price-block,
+.offer-text .countdown { margin-left: auto; margin-right: auto; }
+
+@keyframes btn-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+.btn-bounce { animation: btn-bounce 1.6s ease-in-out infinite; }
+.btn-bounce:hover, .btn-bounce:focus-visible { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .btn-bounce { animation: none; }
+}
 .offer-cover {
   width: 220px;
   max-width: 58vw;
