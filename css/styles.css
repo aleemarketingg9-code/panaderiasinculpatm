@@ -416,11 +416,12 @@ a { color: inherit; }
   gap: 12px;
 }
 .familiar-list li {
-  background: var(--color-sand);
-  padding: 16px 20px;
-  border-radius: var(--radius-sm);
+  background: var(--color-card);
+  padding: 18px 22px;
+  border-radius: 28px;
   font-weight: 600;
   font-size: 1rem;
+  box-shadow: var(--shadow-card);
 }
 .familiar-closing {
   text-align: center;
