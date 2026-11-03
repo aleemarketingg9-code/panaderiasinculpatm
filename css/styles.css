@@ -164,6 +164,14 @@ a { color: inherit; }
   margin-right: auto;
 }
 
+.hero-named {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  max-width: 46ch;
+  margin: 6px auto 0;
+}
+
 .hero-line {
   font-weight: 500;
   color: var(--color-ink);
@@ -282,6 +290,11 @@ a { color: inherit; }
   margin: 0 auto 28px;
   font-size: 1.02rem;
 }
+.method-count {
+  margin-top: -18px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
 .fine-print {
   text-align: center;
   font-size: 0.8rem;
@@ -392,6 +405,89 @@ a { color: inherit; }
   font-size: 0.9rem;
 }
 
+/* ============ ¿Te suena familiar? ============ */
+.familiar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 24px;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.familiar-list li {
+  background: var(--color-sand);
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.familiar-closing {
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  max-width: 48ch;
+  margin: 0 auto;
+}
+
+/* ============ Antes y después ============ */
+.before-after {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.before-after li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--color-card);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.ba-before, .ba-after {
+  padding: 14px 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.ba-before { color: var(--color-ink-faint); text-decoration: line-through; background: rgba(41, 21, 8, 0.04); }
+.ba-after { color: var(--color-primary); }
+@media (max-width: 599px) {
+  .before-after li { grid-template-columns: 1fr; }
+  .ba-before { text-decoration: none; }
+  .ba-before::before { content: "✕ "; }
+  .ba-after::before { content: "✓ "; }
+}
+
+/* ============ ¿Esto es para ti? ============ */
+.fit-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+@media (min-width: 640px) {
+  .fit-grid { grid-template-columns: 1fr 1fr; }
+}
+.fit-card {
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+}
+.fit-card--yes { background: var(--color-sand); }
+.fit-card--no { background: var(--color-card); border: 1.5px solid var(--color-border); }
+.fit-card h3 { margin-bottom: 10px; }
+.fit-card--yes h3 { color: var(--color-primary); }
+.fit-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.fit-card--yes li::before { content: "✓ "; color: var(--color-primary); font-weight: 700; }
+.fit-card--no li::before { content: "✕ "; color: var(--color-ink-faint); font-weight: 700; }
+.fit-card li { font-size: 0.94rem; }
+
 /* ============ Acordeones ============ */
 .accordion { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
 .accordion-item {
@@ -454,6 +550,19 @@ a { color: inherit; }
   padding: 14px;
   position: relative;
   text-align: left;
+}
+.bonus-card--top { border: 2px solid var(--color-primary); }
+.bonus-top-tag {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
 }
 .bonus-card img { border-radius: var(--radius-sm); margin-bottom: 10px; aspect-ratio: 1/1; object-fit: cover; }
 .bonus-card h3 { margin-bottom: 4px; font-size: 0.95rem; }
@@ -684,7 +793,7 @@ a { color: inherit; }
     text-align: left;
   }
   .hero-text-top, .hero-text-bottom { text-align: left; }
-  .hero-sub, .hero-line { margin-left: 0; margin-right: 0; }
+  .hero-sub, .hero-line, .hero-named { margin-left: 0; margin-right: 0; }
   .tag-row { justify-content: flex-start; }
   .price-row { justify-content: flex-start; }
   .hero-cover { width: 100%; max-width: 360px; }
@@ -711,6 +820,7 @@ a { color: inherit; }
   .eyebrow { font-size: 0.72rem; margin-bottom: 8px; }
   .hero-text-top h1 { font-size: 1.55rem; line-height: 1.18; margin-bottom: 0.35em; }
   .hero-sub { font-size: 0.92rem; margin-bottom: 0.4em; }
+  .hero-named { font-size: 0.82rem; margin: 4px auto 0.4em; }
   .hero-line { font-size: 0.88rem; margin-bottom: 0.4em; }
   .tag-row { display: none; }
   .price-row { margin: 0 0 10px; }

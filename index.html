@@ -1,3 +1,4 @@
+<!-- narrativa v2 · 2026-11-03 11:56 -->
 <!doctype html>
 <html lang="es">
 <head>
@@ -36,6 +37,7 @@
         <p class="eyebrow">EL LIBRO COMPLETO · Panadería Sin Culpa™</p>
         <h1>Vuelve a comer pan y postres sin culpa, sin miedo y sin renunciar al sabor</h1>
         <p class="hero-sub">Sin gluten y sin azúcar refinada, con el Método Antifallas™ para que tus recetas salgan bien.</p>
+        <p class="hero-named">Para personas con diabetes, prediabetes o celiaquía, y para que toda la mesa coma lo mismo.</p>
         <p class="hero-line">+180 recetas de panes, tortas, postres y snacks, con ingredientes fáciles de conseguir.</p>
         <ul class="tag-row" aria-label="Tipos de recetas incluidas">
           <li>Panes</li>
@@ -50,14 +52,14 @@
       </div>
 
       <div class="hero-text-bottom">
-        <p class="launch-badge">🚀 Oferta de lanzamiento</p>
+        <p class="launch-badge" id="launchBadge" hidden></p>
         <div class="price-row">
           <span class="price" id="priceDisplay">$12.99 USD</span>
           <span class="price-note">Pago único</span>
         </div>
 
         <a href="#comprar" class="btn btn-primary btn-large js-cta" data-cta="hero">Quiero el libro</a>
-        <p class="micro-note">Incluye 5 bonos y un bono sorpresa, sin costo extra.</p>
+        <p class="micro-note">Incluye un menú de 7 días ya armado, lista de compras y más bonos, sin costo extra.</p>
 
         <ul class="trust-strip">
           <li>✓ Libro digital en PDF</li>
@@ -73,6 +75,21 @@
     <span class="sticky-price" id="stickyPriceDisplay">$12.99 USD</span>
     <a href="#comprar" class="btn btn-primary js-cta" data-cta="sticky-bar">Quiero el libro</a>
   </div>
+
+  <!-- ¿TE SUENA FAMILIAR? -->
+  <section class="section" id="familiar" aria-labelledby="familiar-title">
+    <div class="wrap">
+      <h2 id="familiar-title">¿Te suena familiar?</h2>
+      <ul class="familiar-list">
+        <li>Te sientes excluida en tu propia mesa.</li>
+        <li>Te toca decir "yo no puedo".</li>
+        <li>Cocinar dos versiones: una para ti, otra para ellos.</li>
+        <li>Probaste recetas "saludables" y todas fallaron. Horas perdidas, ingredientes carísimos en la basura.</li>
+        <li>El pan "sin gluten" del supermercado cuesta el doble, se desmorona y nadie en casa lo quiere.</li>
+      </ul>
+      <p class="familiar-closing">En la mesa de Olivia cabemos todos. Una sola comida para toda la familia, sin cocinar doble.</p>
+    </div>
+  </section>
 
   <!-- C. DENTRO DEL LIBRO -->
   <section class="section section-sand" id="dentro" aria-labelledby="dentro-title">
@@ -109,6 +126,7 @@
     <div class="wrap">
       <h2 id="metodo-title">No es solo un libro de recetas. Es un método.</h2>
       <p class="lede">La mayoría de las recetas saludables fallan porque no explican la proporción ni la hidratación, y por eso salen secas o duras. El Método Antifallas™ enseña a corregirlo.</p>
+      <p class="lede method-count">Un método de 7 módulos, con más de 180 recetas para aplicarlo.</p>
 
       <div class="compare-row">
         <figure class="compare-card">
@@ -129,6 +147,73 @@
     </div>
   </section>
 
+  <!-- ANTES Y DESPUÉS -->
+  <section class="section section-sand" id="antes-despues" aria-labelledby="antes-despues-title">
+    <div class="wrap">
+      <h2 id="antes-despues-title">Antes y después</h2>
+      <ul class="before-after">
+        <li>
+          <span class="ba-before">Comer con miedo y culpa</span>
+          <span class="ba-after">Disfrutar cada bocado con tranquilidad</span>
+        </li>
+        <li>
+          <span class="ba-before">Cocinar dos versiones</span>
+          <span class="ba-after">Una sola comida para toda la familia</span>
+        </li>
+        <li>
+          <span class="ba-before">Recetas que fallan en el horno</span>
+          <span class="ba-after">Un método que explica proporción e hidratación</span>
+        </li>
+        <li>
+          <span class="ba-before">Sentirte "la rara" en las reuniones</span>
+          <span class="ba-after">Volver a sentarte a la mesa con los demás</span>
+        </li>
+        <li>
+          <span class="ba-before">Gastar en productos sin sabor</span>
+          <span class="ba-after">Hornear en casa con ingredientes fáciles de conseguir</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LO QUE TRAE EL LIBRO -->
+  <section class="section" id="modulos" aria-labelledby="modulos-title">
+    <div class="wrap">
+      <h2 id="modulos-title">Lo que trae el libro.</h2>
+      <div class="accordion">
+        <details class="accordion-item" open>
+          <summary><span>Bienvenida</span></summary>
+          <p>Cómo usar el libro y en qué orden.</p>
+        </details>
+        <details class="accordion-item">
+          <summary><span>Por qué fallan tus recetas</span></summary>
+          <p>Los errores comunes y por qué no es tu culpa.</p>
+        </details>
+        <details class="accordion-item">
+          <summary><span>Antifallas™</span></summary>
+          <p>Los pilares para hacer cualquier receta con más seguridad.</p>
+        </details>
+        <details class="accordion-item">
+          <summary><span>Textura Real™</span></summary>
+          <p>La técnica para lograr miga esponjosa y húmeda.</p>
+        </details>
+        <details class="accordion-item">
+          <summary><span>Ingredientes Inteligentes™</span></summary>
+          <p>Qué harinas y endulzantes usar, en qué proporción, y qué se puede cambiar.</p>
+        </details>
+        <details class="accordion-item">
+          <summary><span>Cocina Rápida™</span></summary>
+          <p>Recetas en 20 a 40 minutos para días ocupados.</p>
+        </details>
+        <details class="accordion-item">
+          <summary><span>Libertad Alimentaria™</span></summary>
+          <p>Para que toda tu familia coma lo mismo, sin sentirse excluida.</p>
+        </details>
+      </div>
+      <p class="fine-print">Si nunca has horneado: el libro explica cada paso y te enseña a corregir errores comunes.</p>
+    </div>
+  </section>
+
   <!-- F. CAJA DE FORMATO -->
   <section class="section format-box-wrap">
     <div class="wrap">
@@ -144,17 +229,25 @@
       <h2 id="bonos-title">Y si te unes hoy, recibes estos bonos exclusivos</h2>
       <p class="bonos-subtitle">Diseñados para acelerar tus resultados desde la primera semana.</p>
       <div class="bonus-grid">
+        <div class="bonus-card bonus-card--top">
+          <span class="bonus-top-tag">★ El más pedido</span>
+          <img src="images/bono-2.webp" alt="Portada del bono Menú 7 Días Listo" width="500" height="500" loading="lazy">
+          <p class="bonus-price"><span class="bonus-price-strike">$9 USD</span> <span class="bonus-price-free">HOY GRATIS</span></p>
+          <h3>Menú 7 Días Listo</h3>
+          <p>El menú de toda la semana, ya armado: desayuno, almuerzo, merienda y cena, sin tener que pensarlo cada día.</p>
+        </div>
+        <div class="bonus-card bonus-card--top">
+          <span class="bonus-top-tag">★ El más pedido</span>
+          <img src="images/bono-5.webp" alt="Portada del bono Lista Inteligente de Compras" width="500" height="500" loading="lazy">
+          <p class="bonus-price"><span class="bonus-price-strike">$11 USD</span> <span class="bonus-price-free">HOY GRATIS</span></p>
+          <h3>Lista Inteligente de Compras</h3>
+          <p>Qué comprar y dónde conseguirlo en Latinoamérica, con alternativas si no encuentras algo.</p>
+        </div>
         <div class="bonus-card">
           <img src="images/bono-1.webp" alt="Portada del bono Postres Sin Culpa PRO™" width="500" height="500" loading="lazy">
           <p class="bonus-price"><span class="bonus-price-strike">$12 USD</span> <span class="bonus-price-free">HOY GRATIS</span></p>
           <h3>Postres Sin Culpa PRO™</h3>
           <p>Recetas dulces sin gluten y sin azúcar refinada.</p>
-        </div>
-        <div class="bonus-card">
-          <img src="images/bono-2.webp" alt="Portada del bono Menú 7 Días Listo" width="500" height="500" loading="lazy">
-          <p class="bonus-price"><span class="bonus-price-strike">$9 USD</span> <span class="bonus-price-free">HOY GRATIS</span></p>
-          <h3>Menú 7 Días Listo</h3>
-          <p>Una semana organizada de desayuno, almuerzo, merienda y cena.</p>
         </div>
         <div class="bonus-card">
           <img src="images/bono-3.webp" alt="Portada del bono Guía Anti-Inflamación" width="500" height="500" loading="lazy">
@@ -167,12 +260,6 @@
           <p class="bonus-price"><span class="bonus-price-strike">$8 USD</span> <span class="bonus-price-free">HOY GRATIS</span></p>
           <h3>Recetas Express</h3>
           <p>Panes, postres y masas en pocos minutos.</p>
-        </div>
-        <div class="bonus-card">
-          <img src="images/bono-5.webp" alt="Portada del bono Lista Inteligente de Compras" width="500" height="500" loading="lazy">
-          <p class="bonus-price"><span class="bonus-price-strike">$11 USD</span> <span class="bonus-price-free">HOY GRATIS</span></p>
-          <h3>Lista Inteligente de Compras</h3>
-          <p>Qué comprar y dónde conseguirlo en Latinoamérica, con alternativas.</p>
         </div>
         <div class="bonus-card">
           <img src="images/bono-6.webp" alt="Bono sorpresa" width="500" height="500" loading="lazy">
@@ -188,13 +275,13 @@
   <!-- I. LISTO PARA EMPEZAR -->
   <section class="section section-buy" id="comprar" aria-labelledby="comprar-title">
     <div class="wrap buy-wrap">
-      <h2 id="comprar-title">¿Lista para volver a comer pan sin miedo?</h2>
+      <h2 id="comprar-title">¿Lista para volver a sentarte a la mesa sin comer aparte?</h2>
       <ul class="trust-strip trust-strip--center">
         <li>✓ Pago único, sin suscripciones</li>
         <li>✓ Garantía de 7 días</li>
         <li>✓ Libro digital en PDF</li>
       </ul>
-      <p class="launch-badge">🚀 Oferta de lanzamiento</p>
+      <p class="launch-badge" id="launchBadge2" hidden></p>
       <p class="payment-highlight">Pago único</p>
       <a href="#" class="btn btn-primary btn-large js-cta" data-cta="buy-section" id="mainCheckoutLink">Quiero el libro</a>
 
@@ -207,7 +294,7 @@
             <img src="images/addon-emergencia-thumb.webp" alt="" class="addon-card-thumb" width="300" height="300" loading="lazy">
             <span class="addon-card-body">
               <span class="addon-card-title">Kit de Emergencia Antifallas™ <span class="addon-price-final">+$9.99</span></span>
-              <span class="addon-card-desc">Evita errores, ahorra ingredientes y acelera tus resultados desde el primer intento.</span>
+              <span class="addon-card-desc">Evita errores comunes y ahorra ingredientes cuando algo no sale como esperabas.</span>
               <span class="addon-card-foot">
                 <span class="addon-price-strike">$23.98</span>
                 <span class="addon-badge">58% OFF</span>
@@ -257,6 +344,32 @@
       <div>
         <h2 id="garantia-title">Garantía de 7 días.</h2>
         <p>Prueba el libro y, si no es lo que esperabas, escríbenos dentro de los 7 días y te devolvemos tu dinero.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ES PARA TI SI / NO ES PARA TI SI -->
+  <section class="section" id="fit-check" aria-labelledby="fit-check-title">
+    <div class="wrap">
+      <h2 id="fit-check-title">¿Esto es para ti?</h2>
+      <div class="fit-grid">
+        <div class="fit-card fit-card--yes">
+          <h3>Es para ti si…</h3>
+          <ul>
+            <li>Tienes diabetes, prediabetes, celiaquía o sensibilidad al gluten</li>
+            <li>Quieres comer pan y postres sin sentirte mal después</li>
+            <li>Ya intentaste otras recetas saludables y fallaron</li>
+            <li>Quieres que tu familia coma lo mismo sin notarlo</li>
+          </ul>
+        </div>
+        <div class="fit-card fit-card--no">
+          <h3>No es para ti si…</h3>
+          <ul>
+            <li>Buscas recetas con harina de trigo o azúcar refinada</li>
+            <li>No estás dispuesta a practicar aunque sea una vez</li>
+            <li>Esperas resultados sin abrir el libro</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

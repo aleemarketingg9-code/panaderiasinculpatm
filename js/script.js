@@ -88,6 +88,25 @@ function renderPrice() {
   if (priceDisplay) priceDisplay.innerHTML = priceHtml;
   const stickyPrice = document.getElementById("stickyPriceDisplay");
   if (stickyPrice) stickyPrice.textContent = CONFIG.PRICE;
+
+  // {{FECHA_FIN_PRECIO}} — solo se muestra si CONFIG.OFFER_END_ISO tiene una
+  // fecha real y futura. Sin fecha real, no se muestra ningún texto de
+  // "oferta de lanzamiento" (nada de urgencia inventada).
+  const fechaTexto = offerActive
+    ? "Precio de lanzamiento hasta el " +
+      offerEnd.toLocaleDateString("es", { day: "numeric", month: "long", year: "numeric" }) +
+      "."
+    : "";
+  ["launchBadge", "launchBadge2"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (fechaTexto) {
+      el.textContent = fechaTexto;
+      el.hidden = false;
+    } else {
+      el.hidden = true;
+    }
+  });
 }
 
 /* ====================== Checkout (Whop) ====================== */
