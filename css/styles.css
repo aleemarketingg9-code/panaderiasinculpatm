@@ -981,3 +981,96 @@ a { color: inherit; }
 .results-box p:first-child { font-weight: 700; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 10px; }
 .results-box ul { list-style: none; padding: 0; margin: 0; }
 .results-box li { margin-bottom: 6px; }
+
+/* ============ D4: receta completa de muestra ============ */
+.recipe-sample {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 28px 24px;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+.recipe-sample-chapter {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+.recipe-sample-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+.recipe-sample-head h3 { font-size: 1.4rem; margin: 0; }
+.recipe-sample-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.recipe-sample-badges span {
+  background: var(--color-sand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.recipe-sample-sub { margin: 6px 0 18px; }
+.recipe-sample-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 14px 0;
+  margin-bottom: 14px;
+}
+.recipe-sample-meta div { font-weight: 600; font-size: 0.92rem; }
+.recipe-sample-meta span { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-ink-faint); margin-bottom: 2px; }
+.recipe-sample-tags { font-weight: 700; color: var(--color-primary); margin-bottom: 24px; }
+.recipe-sample h4 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 10px; }
+.recipe-sample-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+@media (min-width: 640px) {
+  .recipe-sample-cols { grid-template-columns: 1fr 1fr; }
+}
+.recipe-sample-cols ul, .recipe-sample-cols ol { margin: 0; padding-left: 20px; }
+.recipe-sample-cols li { margin-bottom: 8px; font-size: 0.92rem; }
+.recipe-sample-note { font-size: 0.84rem; color: var(--color-ink-faint); }
+.recipe-sample-callouts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  background: var(--color-sand);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+@media (min-width: 640px) {
+  .recipe-sample-callouts { grid-template-columns: 1fr 1fr; }
+}
+.recipe-sample-callouts p { font-size: 0.9rem; margin-bottom: 6px; }
+.recipe-sample-footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 640px) {
+  .recipe-sample-footer { grid-template-columns: 1fr 1fr; }
+}
+.recipe-sample-nutrition ul { list-style: none; padding: 0; margin: 10px 0; display: flex; flex-wrap: wrap; gap: 14px; }
+.recipe-sample-nutrition li { text-align: center; }
+.recipe-sample-nutrition li strong { display: block; font-family: var(--font-display); color: var(--color-primary); font-size: 1.1rem; }
+.recipe-sample-nutrition li span { font-size: 0.68rem; color: var(--color-ink-faint); }
+
+/* ============ D5: Quién es Olivia ============ */
+.olivia-wrap { max-width: 560px; margin: 0 auto; text-align: center; }
+.olivia-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid var(--color-sand); }
+.olivia-quote { font-family: var(--font-display); font-size: 1.15rem; font-style: italic; color: var(--color-ink); margin-bottom: 18px; }
+.olivia-disclosure { font-size: 0.82rem; color: var(--color-ink-faint); }
