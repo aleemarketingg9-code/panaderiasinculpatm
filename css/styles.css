@@ -524,6 +524,19 @@ a { color: inherit; }
 .accordion-item p { padding: 0 18px 18px; margin: 0; }
 .accordion-faq .accordion-item summary { font-size: 0.98rem; }
 
+.buy-guarantee {
+  margin: 18px 0 10px;
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+  text-align: center;
+}
+.accordion-faq--mini {
+  max-width: 480px;
+  margin: 0 auto 8px;
+}
+.accordion-faq--mini .accordion-item summary { font-size: 0.9rem; padding: 12px 16px; }
+.accordion-faq--mini .accordion-item p { font-size: 0.88rem; padding: 0 16px 16px; }
+
 /* ============ Caja de formato ============ */
 .format-box-wrap { padding: 0 0 56px; }
 .format-box {
