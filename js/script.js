@@ -309,29 +309,6 @@ function setupViewContentTracking() {
   io.observe(buySection);
 }
 
-/* ====================== Carrusel ====================== */
-function setupCarousel() {
-  const track = document.getElementById("carouselTrack");
-  const prev = document.querySelector(".carousel-prev");
-  const next = document.querySelector(".carousel-next");
-  if (!track || !prev || !next) return;
-
-  const scrollByCard = (dir) => {
-    const card = track.querySelector(".recipe-card");
-    const gap = 16;
-    const amount = card ? card.offsetWidth + gap : 200;
-    track.scrollBy({ left: dir * amount, behavior: "smooth" });
-  };
-
-  prev.addEventListener("click", () => scrollByCard(-1));
-  next.addEventListener("click", () => scrollByCard(1));
-
-  track.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") scrollByCard(1);
-    if (e.key === "ArrowLeft") scrollByCard(-1);
-  });
-}
-
 /* ====================== CTA clicks ====================== */
 function setupCtaTracking() {
   document.querySelectorAll(".js-cta").forEach((el) => {
@@ -366,6 +343,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupTestimonials();
   setupStickyBar();
   setupViewContentTracking();
-  setupCarousel();
   setupCtaTracking();
 });
