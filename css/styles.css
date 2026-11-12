@@ -343,13 +343,6 @@ a { color: inherit; }
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
-.recipe-name {
-  display: block;
-  font-weight: 700;
-  font-family: var(--font-display);
-  font-size: 1.02rem;
-  padding: 14px 10px;
-}
 
 .carousel-btn {
   flex: 0 0 auto;
@@ -366,22 +359,8 @@ a { color: inherit; }
 }
 @media (min-width: 640px) { .carousel-btn { display: block; } }
 
-.recipe-showcase-label {
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--color-ink-soft);
-  margin: 20px 0 4px;
-}
-.recipe-category {
-  display: block;
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-primary);
-  padding: 10px 10px 0;
-}
-.recipe-card .recipe-name { padding-top: 2px; }
+.recipe-card--page { width: 220px; }
+.recipe-card--page img { aspect-ratio: auto; object-fit: contain; }
 
 /* ============ Comparación pan bueno / malo ============ */
 .compare-row { display: grid; gap: 16px; margin: 0 auto 28px; max-width: 640px; }
@@ -1181,7 +1160,7 @@ body.checkout-modal-open { overflow: hidden; }
 
 /* ============ D5: Quién es Olivia ============ */
 .olivia-wrap { max-width: 560px; margin: 0 auto; text-align: center; }
-.olivia-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid var(--color-sand); }
+.olivia-photo { width: 100%; max-width: 320px; aspect-ratio: 7 / 8; height: auto; border-radius: var(--radius-lg); object-fit: cover; margin: 14px auto 20px; display: block; }
 .olivia-quote { font-family: var(--font-display); font-size: 1.15rem; font-style: italic; color: var(--color-ink); margin-bottom: 18px; }
 .olivia-disclosure { font-size: 0.82rem; color: var(--color-ink-faint); }
 
