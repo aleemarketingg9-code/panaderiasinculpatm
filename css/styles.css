@@ -362,6 +362,31 @@ a { color: inherit; }
 .recipe-card--page { width: 220px; }
 .recipe-card--page img { aspect-ratio: auto; object-fit: contain; }
 
+/* ============ Para desayunar, para cenar y de postre ============ */
+.value-recipe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 560px;
+  margin: 24px auto 32px;
+}
+.value-recipe-card { margin: 0; }
+.value-recipe-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  display: block;
+  box-shadow: var(--shadow-card);
+}
+.value-recipe-card figcaption {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
 /* ============ Comparación pan bueno / malo ============ */
 .compare-row { display: grid; gap: 16px; margin: 0 auto 28px; max-width: 640px; }
 .compare-card {
