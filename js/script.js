@@ -236,6 +236,22 @@ function setupCheckout() {
   }
 }
 
+/* ====================== Carrusel de recetas (vitrina) ====================== */
+function setupCarousel() {
+  const track = document.getElementById("carouselTrack");
+  const container = track ? track.closest(".carousel") : null;
+  if (!track || !container) return;
+  const prevBtn = container.querySelector(".carousel-prev");
+  const nextBtn = container.querySelector(".carousel-next");
+  function scrollByCard(dir) {
+    const card = track.querySelector(".recipe-card");
+    const step = card ? card.offsetWidth + 16 : 220;
+    track.scrollBy({ left: dir * step, behavior: "smooth" });
+  }
+  if (prevBtn) prevBtn.addEventListener("click", () => scrollByCard(-1));
+  if (nextBtn) nextBtn.addEventListener("click", () => scrollByCard(1));
+}
+
 /* ====================== Enlaces de contacto / legales ====================== */
 function setupFooterLinks() {
   const terms = document.getElementById("termsLink");
@@ -388,6 +404,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupStickyBar();
   setupViewContentTracking();
   setupCtaTracking();
+  setupCarousel();
   try {
     setupCheckoutModal();
   } catch (e) {
