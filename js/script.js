@@ -45,6 +45,20 @@ function getOriginParam() {
   return v;
 }
 
+// D1: origen del tráfico para el checkout de Whop.
+// La parte después del último guion (ig, fb, yt, tt) es la red; lo anterior
+// es la campaña. Sin ?v=, se marca como "directo".
+function getAttribution() {
+  const v = getOriginParam();
+  const sourceMap = { ig: "instagram", fb: "facebook", yt: "youtube", tt: "tiktok" };
+  if (!v) return { utmSource: "directo" };
+  const lastDash = v.lastIndexOf("-");
+  if (lastDash === -1) return { utmSource: sourceMap[v] || v };
+  const suffix = v.slice(lastDash + 1);
+  const campaign = v.slice(0, lastDash);
+  return { utmSource: sourceMap[suffix] || suffix, utmCampaign: campaign };
+}
+
 function loadMetaPixel(pixelId) {
   if (!pixelId) return;
   /* eslint-disable */
@@ -141,7 +155,14 @@ function mountWhopCheckout(planId) {
   container.appendChild(mountPoint);
 
   loadWhopScript(() => {
-    const checkout = window.WhopElements().checkout.create({ plan: planId });
+    const v = getOriginParam();
+    const attribution = getAttribution();
+    const checkout = window.WhopElements().checkout.create({
+      plan: planId,
+      locale: "es",
+      attribution: attribution,
+      metadata: v ? { v: v } : undefined,
+    });
     checkout.create("checkout").mount("#whop-checkout");
   });
 }
