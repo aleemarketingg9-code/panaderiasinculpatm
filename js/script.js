@@ -216,6 +216,8 @@ function setupAddonOffers() {
   });
 }
 
+let ensureWhopMounted = () => {};
+
 function setupCheckout() {
   const container = document.getElementById("whopEmbedContainer");
   const mainLink = document.getElementById("mainCheckoutLink");
@@ -224,7 +226,30 @@ function setupCheckout() {
     // Embed oficial de Whop (snippet "JavaScript" generado desde el panel de
     // Whop para este plan): queda en la página, sin salir ni abrir pestañas,
     // lo que funciona bien también dentro del navegador interno de Instagram.
-    mountWhopCheckout(getSelectedPlan());
+    // Velocidad: el script y el iframe de Whop pesan y no son gratis de
+    // cargar, así que se montan solo cuando la persona se acerca a #comprar
+    // (scroll normal) o abre la ventana de pago (D7) — nunca antes.
+    let mounted = false;
+    ensureWhopMounted = () => {
+      if (mounted) return;
+      mounted = true;
+      mountWhopCheckout(getSelectedPlan());
+    };
+    const comprarSection = document.getElementById("comprar");
+    if (comprarSection && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            ensureWhopMounted();
+            io.disconnect();
+          }
+        },
+        { rootMargin: "600px 0px" }
+      );
+      io.observe(comprarSection);
+    } else {
+      ensureWhopMounted();
+    }
     setupAddonOffers();
 
     if (mainLink) mainLink.style.display = "none";
@@ -297,16 +322,21 @@ async function setupTestimonials() {
 /* ====================== Barra fija móvil ====================== */
 function setupStickyBar() {
   const bar = document.getElementById("stickyBar");
-  const hero = document.querySelector(".hero");
-  if (!bar || !hero) return;
+  // Aparece en cuanto empieza a verse la sección 2 ("¿Esto es para ti?")
+  // y se queda visible el resto de la página (no se vuelve a ocultar).
+  const target = document.getElementById("fit-check");
+  if (!bar || !target) return;
 
   const io = new IntersectionObserver(
     ([entry]) => {
-      bar.hidden = entry.isIntersecting;
+      if (entry.isIntersecting) {
+        bar.hidden = false;
+        io.disconnect();
+      }
     },
-    { threshold: 0, rootMargin: "-10% 0px 0px 0px" }
+    { threshold: 0 }
   );
-  io.observe(hero);
+  io.observe(target);
 }
 
 /* ====================== ViewContent al llegar al pago ====================== */
@@ -356,6 +386,7 @@ function setupCheckoutModal() {
     modal.setAttribute("role", "dialog");
     modal.setAttribute("aria-modal", "true");
     document.addEventListener("keydown", onKeydown);
+    ensureWhopMounted();
   }
 
   function closeModal() {
