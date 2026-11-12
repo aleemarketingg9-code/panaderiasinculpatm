@@ -358,6 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getOriginParam();
   loadMetaPixel(CONFIG.META_PIXEL_ID);
   loadClarity(CONFIG.CLARITY_ID);
+  if (window.clarity) window.clarity("set", "cambio", "D1-D8");
   renderPrice();
   setupCheckout();
   appendOriginToCheckoutLinks();
