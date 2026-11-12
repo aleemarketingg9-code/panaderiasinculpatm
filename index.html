@@ -455,9 +455,22 @@
     </div>
   </section>
 
+  <!-- D7: fondo y botón de cierre de la ventana de pago (solo actúan cuando
+       el JS activa el modal; si el JS falla, #comprar sigue en su lugar
+       normal de la página y el enlace ancla hace scroll como siempre). -->
+  <div class="checkout-modal-backdrop" id="checkoutModalBackdrop"></div>
+
   <!-- I. LISTO PARA EMPEZAR -->
   <section class="section section-buy" id="comprar" aria-labelledby="comprar-title">
+    <button type="button" class="checkout-modal-close" id="checkoutModalClose" aria-label="Cerrar ventana de pago">✕</button>
     <div class="wrap buy-wrap">
+      <div class="checkout-modal-header">
+        <img src="images/portada-producto-v2.webp" alt="" width="56" height="56" loading="lazy">
+        <span class="checkout-modal-header-text">
+          <strong>Panadería Sin Culpa™</strong>
+          <span id="modalPriceLine">Libro digital · pago único</span>
+        </span>
+      </div>
       <h2 id="comprar-title">¿Lista para volver a sentarte a la mesa sin comer aparte?</h2>
       <ul class="trust-strip trust-strip--center">
         <li>✓ Pago único, sin suscripciones</li>

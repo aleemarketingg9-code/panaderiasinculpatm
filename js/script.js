@@ -102,6 +102,8 @@ function renderPrice() {
   if (priceDisplay) priceDisplay.innerHTML = priceHtml;
   const stickyPrice = document.getElementById("stickyPriceDisplay");
   if (stickyPrice) stickyPrice.textContent = CONFIG.PRICE;
+  const modalPriceLine = document.getElementById("modalPriceLine");
+  if (modalPriceLine) modalPriceLine.textContent = "Libro digital · " + CONFIG.PRICE + " · pago único";
 
   // {{FECHA_FIN_PRECIO}} — solo se muestra si CONFIG.OFFER_END_ISO tiene una
   // fecha real y futura. Sin fecha real, no se muestra ningún texto de
@@ -316,6 +318,48 @@ function setupCtaTracking() {
   });
 }
 
+/* ====================== D7: ventana de pago dentro de la página ======================
+   Los botones "Quiero el libro" de arriba de la página llevan a #comprar con
+   href normal (si este script no corre, el navegador hace scroll al ancla
+   como hasta ahora: el pago actual sigue funcionando igual). Cuando el script
+   sí corre, el clic abre #comprar como ventana superpuesta en vez de bajar. */
+function setupCheckoutModal() {
+  const modal = document.getElementById("comprar");
+  const backdrop = document.getElementById("checkoutModalBackdrop");
+  const closeBtn = document.getElementById("checkoutModalClose");
+  const triggers = document.querySelectorAll('a.js-cta[href="#comprar"]');
+  if (!modal || !backdrop || !closeBtn || !triggers.length) return;
+
+  function onKeydown(e) {
+    if (e.key === "Escape") closeModal();
+  }
+
+  function openModal() {
+    document.body.classList.add("checkout-modal-open");
+    modal.classList.add("checkout-modal--active");
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    document.addEventListener("keydown", onKeydown);
+  }
+
+  function closeModal() {
+    document.body.classList.remove("checkout-modal-open");
+    modal.classList.remove("checkout-modal--active");
+    modal.removeAttribute("role");
+    modal.removeAttribute("aria-modal");
+    document.removeEventListener("keydown", onKeydown);
+  }
+
+  triggers.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+}
+
 /* ====================== Pasar el origen (?v=) al checkout ====================== */
 function appendOriginToCheckoutLinks() {
   const v = getOriginParam();
@@ -344,4 +388,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupStickyBar();
   setupViewContentTracking();
   setupCtaTracking();
+  try {
+    setupCheckoutModal();
+  } catch (e) {
+    // D7: si la ventana de pago falla al iniciar, los botones "Quiero el
+    // libro" conservan su comportamiento normal (scroll a #comprar).
+  }
 });

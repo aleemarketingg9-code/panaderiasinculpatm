@@ -641,6 +641,72 @@ a { color: inherit; }
 .hero-text-bottom .launch-badge { margin-top: 2px; }
 .buy-wrap .launch-badge { margin: 0 auto 8px; }
 
+/* ============ D7: ventana de pago ============
+   #comprar vive siempre en el flujo normal de la página (así, si este CSS o
+   el JS que agrega las clases no carga, el enlace ancla sigue llevando ahí
+   con scroll normal, igual que antes). Las clases de abajo solo aparecen
+   cuando el JS las activa al hacer clic en "Quiero el libro". */
+.checkout-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(41, 21, 8, 0.55);
+  z-index: 998;
+}
+body.checkout-modal-open .checkout-modal-backdrop { display: block; }
+body.checkout-modal-open { overflow: hidden; }
+
+.checkout-modal-close { display: none; }
+#comprar.checkout-modal--active .checkout-modal-close {
+  display: flex;
+  position: fixed;
+  top: 10px;
+  right: 14px;
+  z-index: 1000;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-card);
+  border: 1px solid var(--color-sand-deep);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.checkout-modal-header { display: none; }
+#comprar.checkout-modal--active .checkout-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  margin: 0 auto 14px;
+  max-width: 420px;
+}
+.checkout-modal-header img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex: 0 0 auto;
+}
+.checkout-modal-header-text { display: flex; flex-direction: column; }
+.checkout-modal-header-text strong { font-family: var(--font-display); font-size: 1rem; }
+.checkout-modal-header-text span { font-size: 0.82rem; color: var(--color-ink-soft); }
+
+#comprar.checkout-modal--active {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--color-card);
+  padding-top: 48px;
+  padding-bottom: 40px;
+}
+
 .payment-highlight {
   text-align: center;
   font-family: var(--font-display);
